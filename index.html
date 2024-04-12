@@ -7,5 +7,20 @@
     <script src="script.js"></script>
     <title>Ai Image Generator</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+        <h1>Ai Image Generator</h1>
+        <p>Write your prompt here to generate images with power of Ai</p>
+        <form  class="gen-form">
+            <input type="text" id="user-input" placeholder="Type your prompt here..." autocomplete="off">
+            <button type="button" id="generate">Generate</button>
+        </form>
+
+        <div class="result">
+            <div id="loading">Generating...</div>
+            <div id="image-grid"></div>
+        </div>
+    </div>
+
+  </body>
 </html>
