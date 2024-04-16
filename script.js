@@ -4,7 +4,7 @@ const maxImages = 4;
 let selectedImageNumber = null;
 
 function getRandomNumber(min, max) {
-  return Math.random(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function disableGenerateButton() {
@@ -48,10 +48,21 @@ async function generateImages(input) {
     const img = document.createElement("img");
     img.src = imgUrl;
     img.alt = `art-${i + 1}`;
-    img.onclick = () => downladImage(imgUrl, i);
+    img.onclick = () => downloadImage(imgUrl, i);
     document.getElementById("image-grid").appendChild(img);
   }
   loading.style.display = "none";
   enableGenerateButton();
   selectedImageNumber = null;
+}
+
+document.getElementById("generate").addEventListener("click", () => {
+  const input = document.getElementById("user-prompt").value;
+  generateImages(input);
+});
+function downloadImage(imgUrl, imageNumber) {
+  const link = document.createElement("a");
+  link.href = imgUrl;
+  link.download = `image-${imageNumber + 1}.jpg`;
+  link.click();
 }
