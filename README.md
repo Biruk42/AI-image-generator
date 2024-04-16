@@ -1,2 +1,2 @@
 # AI Image Generator
-![Screenshot](/screensho.png)
+![Screenshot](/Screensho.png)
