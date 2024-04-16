@@ -1,4 +1,4 @@
-const API_KEY = "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";
+const apiKey = "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";
 
 const maxImages = 4;
 let selectedImageNumber = null;
@@ -29,12 +29,12 @@ async function generateImages(input) {
     const randomNumber = getRandomNumber(1, 10000);
     const prompt = `${input} ${randomNumber}`;
     const response = await fetch(
-      "https://api-inference.huggingface.co/models/gpt2/prompthero/openjourney-v4",
+      "https://api-inference.huggingface.co/models/prompthero/openjourney-v4",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${API_KEY}`,
+          Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({ inputs: prompt }),
       }
