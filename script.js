@@ -26,7 +26,7 @@ async function generateImages(input) {
 
   const imageUrls = [];
   for (let i = 0; i < maxImages; i++) {
-    const randomNumber = getRandomNumber(1, 100);
+    const randomNumber = getRandomNumber(1, 10000);
     const prompt = `${input} ${randomNumber}`;
     const response = await fetch(
       "https://api-inference.huggingface.co/models/gpt2/prompthero/openjourney-v4",
